@@ -13,7 +13,9 @@
   },
   "networks": {
     "staging": {
-      "bind": "https://ic0.app",
+      "providers": [
+        "https://ic0.app"
+      ],
       "type": "persistent"
     },
     "local": {
