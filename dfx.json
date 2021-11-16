@@ -1,31 +1,21 @@
 {
   "canisters": {
-    "dfx_staging_env_example": {
-      "main": "src/dfx_staging_env_example/main.mo",
-      "type": "motoko"
-    },
-    "dfx_staging_env_example_assets": {
-      "dependencies": [
-        "dfx_staging_env_example"
-      ],
+    "example": {
       "frontend": {
-        "entrypoint": "src/dfx_staging_env_example_assets/src/index.html"
+        "entrypoint": "src/example/src/index.html"
       },
       "source": [
-        "src/dfx_staging_env_example_assets/assets",
-        "dist/dfx_staging_env_example_assets/"
+        "src/example/assets",
+        "dist/example/"
       ],
       "type": "assets"
     }
   },
-  "defaults": {
-    "build": {
-      "args": "",
-      "packtool": ""
-    }
-  },
-  "dfx": "0.8.3-33-gde15c888",
   "networks": {
+    "staging": {
+      "bind": "https://ic0.app",
+      "type": "persistent"
+    },
     "local": {
       "bind": "127.0.0.1:8000",
       "type": "ephemeral"

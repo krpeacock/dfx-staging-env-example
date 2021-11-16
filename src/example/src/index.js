@@ -1,4 +1,12 @@
-import { dfx_staging_env_example } from "../../declarations/dfx_staging_env_example";
+import { example } from "../../declarations/example";
+
+// Environment-specific logic
+if (
+  process.env.DFX_NETWORK === "staging" ||
+  process.env.DFX_NETWORK === "local"
+) {
+  document.getElementById("pencil-banner").classList.remove("hidden");
+}
 
 document.querySelector("form").addEventListener("submit", async (e) => {
   e.preventDefault();
@@ -9,7 +17,7 @@ document.querySelector("form").addEventListener("submit", async (e) => {
   button.setAttribute("disabled", true);
 
   // Interact with foo actor, calling the greet method
-  const greeting = await dfx_staging_env_example.greet(name);
+  const greeting = await example.greet(name);
 
   button.removeAttribute("disabled");
 

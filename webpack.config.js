@@ -38,7 +38,7 @@ const canisterEnvVariables = initCanisterEnv();
 
 const isDevelopment = process.env.NODE_ENV !== "production";
 
-const frontendDirectory = "dfx_staging_env_example_assets";
+const frontendDirectory = "example";
 
 const asset_entry = path.join("src", frontendDirectory, "src", "index.html");
 
@@ -96,6 +96,10 @@ module.exports = {
     }),
     new webpack.EnvironmentPlugin({
       NODE_ENV: "development",
+      // Make DFX_NETWORK available to app
+      DFX_NETWORK:
+        process.env.DFX_NETWORK ||
+        (process.env.NODE_ENV === "production" ? "ic" : "local"),
       ...canisterEnvVariables,
     }),
     new webpack.ProvidePlugin({
