@@ -14,7 +14,7 @@
   "networks": {
     "staging": {
       "providers": [
-        "https://ic0.app"
+        "https://ic0.app/"
       ],
       "type": "persistent"
     },
