@@ -12,6 +12,8 @@ You will need to configure DFX to use your mainnet cycles wallet for the staging
 dfx identity --network staging set-wallet $(dfx identity --network ic get-wallet)
 ```
 
+> Note - this workflow is broken in 0.9.x releases. You can upgrade to 0.10.x to fix this. As of today, 0.10.0-beta.0 is available to test.
+
 ## Frontend
 
 By using the `DFX_NETWORK` environment variable in webpack, you can determine which environment you are in during development.
